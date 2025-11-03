@@ -21,7 +21,16 @@ export default function ChatInterface() {
           <div key={i} style={{ textAlign: m.sender === "user" ? "right" : "left" }}>{m.text}</div>
         ))}
       </div>
-      <input value={input} onChange={(e) => setInput(e.target.value)} />
+      <input
+  value={input}
+  onChange={(e) => setInput(e.target.value)}
+  onKeyDown={(e) => {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
+  }}
+/>
+
       <button onClick={sendMessage}>Send</button>
     </div>
   );

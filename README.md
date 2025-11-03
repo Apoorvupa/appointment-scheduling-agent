@@ -6,3 +6,8 @@
 ```bash
 git clone https://github.com/Apoorvupa/appointment-scheduling-agent.git
 cd appointment-scheduling-agent
+
+
+
+
+### venv create and 
