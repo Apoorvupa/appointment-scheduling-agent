@@ -5,23 +5,18 @@ from backend.agent.scheduling_agent import process_message
 def test_booking_flow():
     user_id = "test_user"
 
-    # Step 1: Start conversation
     response = process_message(user_id, "Hi, I need to see a doctor")
     print(response)
 
-    # Step 2: Appointment type
     response = process_message(user_id, "General consultation")
     print(response)
 
-    # Step 3: Preferred date
     response = process_message(user_id, "2024-01-15")
     print(response)
 
-    # Step 4: Choose a time slot
     response = process_message(user_id, "09:00")
     print(response)
 
-    # Step 5: Provide patient info
     response = process_message(user_id, "John Doe, john@example.com, +1-555-0100")
     print(response)
 

@@ -16,19 +16,17 @@ async def chat_endpoint(request: Request):
         if not message:
             raise HTTPException(status_code=400, detail="Message cannot be empty.")
 
-        print(f"🧠 User({user_id}): {message}")  # Debug log
+        print(f"User({user_id}): {message}")  
 
-        # Process user message with AI Agent
         response = process_message(user_id, message)
 
-        # Ensure response is string
         if not isinstance(response, str):
             response = str(response)
 
-        print(f"🤖 Bot({user_id}): {response}")  # Debug log
+        print(f"Bot({user_id}): {response}")  
 
         return {"reply": response}
 
     except Exception as e:
-        print("❌ Error in chat endpoint:", e)
+        print(" Error in chat endpoint:", e)
         raise HTTPException(status_code=500, detail="Internal Server Error")
